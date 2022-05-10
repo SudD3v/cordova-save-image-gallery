@@ -40,17 +40,17 @@
 
     <config-file parent="/*" target="AndroidManifest.xml">
  
-    <!-- Aparentemente pode estar a dar conflito -->
-   <!--   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>  -->
+
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
 
       <uses-permission android:name="android.permission.DELETE_CACHE_FILES"/>
     </config-file>
     
       <!-- Android 10 save storage: Daniel -->    
-      <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">   
+ <!--     <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">   
            <application android:requestLegacyExternalStorage="true"/>
       </edit-config>  
-
+-->
 
     <config-file parent="/*" target="res/xml/config.xml">
       <feature name="SaveImageGallery">
