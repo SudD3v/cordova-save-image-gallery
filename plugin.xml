@@ -36,31 +36,27 @@
 
   <!-- android -->
   <platform name="android">
-    <source-file src="src/android/SaveImageGallery.java" target-dir="src/com/agomezmoron/SaveImageGallery"/>
+      <source-file src="src/android/SaveImageGallery.java" target-dir="src/com/agomezmoron/SaveImageGallery"/>
 
-    <config-file parent="/*" target="AndroidManifest.xml">
- 
-
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
-
-      <uses-permission android:name="android.permission.DELETE_CACHE_FILES"/>
-    </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml">
+          <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
+          <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+          <uses-permission android:name="android.permission.DELETE_CACHE_FILES"/>
+      </config-file>
     
       <!-- Android 10 save storage: Daniel -->    
-      <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="overwrite">   
+      <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">   
            <application android:requestLegacyExternalStorage="true"/>
       </edit-config>  
 
 
-    <config-file parent="/*" target="res/xml/config.xml">
-      <feature name="SaveImageGallery">
-        <param name="android-package" value="com.agomezmoron.saveImageGallery.SaveImageGallery"/>
-      </feature>
-    </config-file>
+      <config-file parent="/*" target="res/xml/config.xml">
+          <feature name="SaveImageGallery">
+              <param name="android-package" value="com.agomezmoron.saveImageGallery.SaveImageGallery"/>
+          </feature>
+      </config-file>
     
-
-    
-  </platform>
+ </platform>
 
   <!-- wp8 -->
   <platform name="wp8">
